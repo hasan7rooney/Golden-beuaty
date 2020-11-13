@@ -1,7 +1,6 @@
-import '../css/css.css'
-import '../styles/globals.css'
-import '../styles/resp.css'
-import "../styles/responsive.css"
+import 'antd/dist/antd.css';
+import '../css/app.scss';
+
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
