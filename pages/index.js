@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
-// import Popular from"../components/popular";
-// import Upcoming from"../components/upcoming";
-// import TopRated from"../components/topRated";
-// import MySearch from "../components/mySearch";
 import MyCard from "../components/myCard";
-
+import Login from '../components/login'
 
 const Home = () => {
   const [top, setTop] = useState([]);
@@ -34,13 +30,13 @@ const Home = () => {
 
   return (
     <>
-    <div>
+    <Login/>
+
+    {/* <div>
     <header>
       <div className="container">
         <nav>
-          <h1 className="golden">Golden Beauty</h1>
-
-          
+          <h1 className="golden">Golden Beauty</h1>         
           <ul className="nav-area">
             <li>
               <a href="#">Home</a>
@@ -95,7 +91,7 @@ const Home = () => {
         </div>
       </section>
     </main>
-  </div>
+  </div> */}
   </>
   );
 };
