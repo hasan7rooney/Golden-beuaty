@@ -17,8 +17,7 @@ const login = () => {
         </div>
 
         <label>
-          {/* <input type="button" class="btn" value="Sign in" /> */}
-          <button class="btn" > Activate Lasers </button>
+          <button class="btn" > login </button>
         </label>
       </div>
     </>

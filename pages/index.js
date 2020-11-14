@@ -1,38 +1,23 @@
 import { useEffect, useState } from "react";
-import MyCard from "../components/myCard";
+import Card from "../components/myCard";
 import Login from '../components/login'
 
-const Home = () => {
-  const [top, setTop] = useState([]);
-  const [popular, setPopular] = useState([]);
-  const [topLoading, setTopLoading] = useState(true);
-  const [popularLoading, setPopularLoading] = useState(true);
+export async function getStaticProps(){
+  const res=await fetch(
+    "https://goldenbeauty.herokuapp.com/v1/products"
+  );
+  const posts=await res.json();
+  return {props:{posts}};
+}
 
-  useEffect(() => {
-    fetch(
-      "http://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl&product_type=lipstick")
-      .then((response) => response.json())
-      .then((result) => {
-        setTop(result);
-        setTopLoading(false);
-      });
 
-    fetch(
-"http://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl&product_type=lipstick")
-      .then((response) => response.json())
-      .then((result) => {
-        console.log(typeof result)
-        setPopular(result);
-        setPopularLoading(false);
-          
-      });
-  }, []);
+const Home = (props) => {
 
   return (
     <>
-    <Login/>
+    {/* <Login/> */}
 
-    {/* <div>
+    <div>
     <header>
       <div className="container">
         <nav>
@@ -60,39 +45,38 @@ const Home = () => {
           <div className="top-rated">
             <h2>Top Rated</h2>
             <div className="cards">
-              {top.map((item) => 
+              {props.posts.data.map((e) => 
                  (
-                  <MyCard
-                    key={item.id}
-                    img={item.image_link}
-                    name={item.name}
-
+                  <Card
+                  image={e.image}
+                  title={e.name}
+                  description={e.description}
                   />
                 )
               )}
+
             </div>
           </div>
           <div className="most-popular">
             <h2>Most Popular</h2>
             <div className="cards">
-              {popular.map((item) => 
-               (
-                  <MyCard
-                    key={item.id}
-                    img={item.image_link}
-                    name={item.name}
-                  
+            {props.posts.data.map((e) => 
+                 (
+                  <Card
+                  image={e.image}
+                  title={e.name}
+                  description={e.description}
                   />
                 )
               )}
             </div>
           </div>
- 
         </div>
       </section>
     </main>
-  </div> */}
+  </div>
   </>
   );
 };
+
 export default Home;

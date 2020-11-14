@@ -1,16 +1,24 @@
-const MyCard = ({ img, name, currency, description}) => {
+const Card = ({ image, name, description }) => {
     return (
       <div className="card">
-        <img src={img} alt="" />
-        <div className="overlay">
-          <small className="date">{currency}</small>
-          <br />
-          <small>{description}</small>
-        </div>
-        <p>{name}</p>
+
+    <img src={image} alt="" />
+      <h1>{name}</h1>
+      <p>{description}</p>
       </div>
     );
   };
-  
-  export default MyCard;
-  
+
+  export default Card;
+
+// const Card = ({ id, title, description }) => {
+//   return (
+//     <div className="card">
+//       <h1>{id}</h1>
+//       <h1>{title}</h1>
+//       <p>{description}</p>
+//     </div>
+//   );
+// };
+
+// export default Card;
