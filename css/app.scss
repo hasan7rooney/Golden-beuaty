@@ -61,11 +61,12 @@
 
 /////////////////////////////////////// start login ////////////////////
 @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
-body{
+.body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-//   background: url(images/makeup.jpg) no-repeat;
+    background: #efefef;
+  background-image: url(https://media.istockphoto.com/photos/makeup-powders-for-face-skin-cover-picture-id1153238980) no-repeat;
  background-size: cover;
 }
 .login-box{
@@ -100,7 +101,7 @@ body{
   border: none;
   outline: none;
   background: none;
-  color: white;
+  color:black;
   font-size: 18px;
   width: 80%;
   float: left;
@@ -520,4 +521,12 @@ body{
     .cards::-webkit-scrollbar-thumb {
       display: none;
     }
+  }
+
+  .login-page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
